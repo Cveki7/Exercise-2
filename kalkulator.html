@@ -1,0 +1,78 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>Kalkulator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="kalkulator">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="judul">KALKULATOR</h2>
+                    <br/>
+                    <input class="form-control" type="text" disabled value="0" id="tampilan">
+                    <br>
+                    <table class="col-12">
+                        <tr>
+                            <td><button type="button" class="btn btn-light col-12" id="tujuh" onclick="clickNumber(7)">7</button></td>
+                            <td><button type="button" class="btn btn-light col-12" id="delapan" onclick="clickNumber(8)">8</button></td>
+                            <td><button type="button" class="btn btn-light col-12" id="sembilan" onclick="clickNumber(9)">9</button></td>
+                            <td><button type="button" class="btn btn-warning col-12" id="bagi" onclick="clickOperator('/')">/</button></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="btn btn-light col-12" id="empat" onclick="clickNumber(4)">4</button></td>
+                            <td><button type="button" class="btn btn-light col-12" id="lima" onclick="clickNumber(5)">5</button></td>
+                            <td><button type="button" class="btn btn-light col-12" id="enam" onclick="clickNumber(6)">6</button></td>
+                            <td><button type="button" class="btn btn-warning col-12" id="kali" onclick="clickOperator('*')">*</button></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="btn btn-light col-12" id="tiga" onclick="clickNumber(3)">3</button></td>
+                            <td><button type="button" class="btn btn-light col-12" id="dua" onclick="clickNumber(2)">2</button></td>
+                            <td><button type="button" class="btn btn-light col-12" id="satu" onclick="clickNumber(1)">1</button></td>
+                            <td><button type="button" class="btn btn-warning col-12" id="kurang" onclick="clickOperator('-')">-</button></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="btn btn-danger col-12" id="clear" onclick="clickClear()">C</button></td>
+                            <td><button type="button" class="btn btn-light col-12" id="nol" onclick="clickNumber(0)">0</button></td>
+                            <td colspan="2"><button type="button" class="btn btn-warning col-12" id="tambah" onclick="clickOperator('+')">+</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let operator = ""
+        function clickNumber(num){
+            let numBefore = document.getElementById('tampilan').value
+            console.log('Num '+num);
+            console.log('numBefore '+numBefore);
+            switch(operator){
+                case "+":
+                num = parseInt(numBefore) + num
+                break;
+                case "-":
+                num = parseInt(numBefore) - num
+                break;
+                case "/":
+                num = parseInt(numBefore) / num
+                break;
+                case "*":
+                num = parseInt(numBefore) * num
+                break;
+            }
+            document.getElementById('tampilan').value = num
+        } 
+        
+        function clickOperator(operate){
+            operator = operate
+        }
+
+        function clickClear(){
+            location.reload();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+.kalkulator{
+    width: 335px;
+    height: auto;
+	background: #2F495A;
+	margin: 100px auto;
+	padding: 10px 20px 50px 20px;
+	border-radius: 5px;
+	box-shadow: 0px 10px 20px 0px #D1D1D1;
+}
+
+.judul{
+	text-align: center;
+	color: #eee;
+	font-weight: normal;
+}
